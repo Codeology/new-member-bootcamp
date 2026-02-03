@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cody Bootcamp: Shoutout Wall</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, #4f46e5, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm py-6">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold tracking-tight">
+                <span class="gradient-text">Cody Bootcamp</span>
+            </h1>
+            <a href="starter.html" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">
+                Start Coding
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 py-12">
+
+        <div class="mb-12 text-center">
+            <h2 class="text-5xl font-bold mb-4">Project: The Shoutout Wall</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Build a real-time message board where anyone can post a shoutout to the world. You'll learn HTML,
+                Tailwind CSS, JavaScript, and Databases!
+            </p>
+        </div>
+
+        <!-- Links -->
+        <div class="flex justify-center gap-4 mb-16">
+            <a href="starter.html" target="_blank"
+                class="flex items-center gap-2 px-6 py-3 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition">
+                📄 <span>View Starter Code</span>
+            </a>
+            <a href="solution.html" target="_blank"
+                class="flex items-center gap-2 px-6 py-3 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition">
+                🚀 <span>View Solution Demo</span>
+            </a>
+        </div>
+
+        <!-- Specs -->
+        <div class="grid md:grid-cols-2 gap-12">
+
+            <!-- Phase 1 -->
+            <div class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-bold px-3 py-1 rounded-full">Phase 1</span>
+                    <h3 class="text-2xl font-bold">The Basics</h3>
+                </div>
+                <ul class="space-y-3">
+                    <li class="flex gap-3">
+                        <span class="text-green-500 text-xl">✓</span>
+                        <span>Fetch messages from the database</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-green-500 text-xl">✓</span>
+                        <span>Display name and message in a card</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-green-500 text-xl">✓</span>
+                        <span>Create a "Post" button that saves data</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-green-500 text-xl">✓</span>
+                        <span>Show a "Loading..." state while fetching</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-bold px-3 py-1 rounded-full">Phase 2</span>
+                    <h3 class="text-2xl font-bold">Advanced Features</h3>
+                </div>
+                <ul class="space-y-3">
+                    <li class="flex gap-3">
+                        <span class="text-green-500 text-xl">✓</span>
+                        <span><strong>Like Button</strong>: Update the like count ❤️</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-green-500 text-xl">✓</span>
+                        <span><strong>Delete Button</strong>: Remove bad posts 🗑️</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-green-500 text-xl">✓</span>
+                        <span><strong>Timestamps</strong>: Show when it was posted 🕒</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Resources -->
+        <div class="mt-16 bg-gray-900 text-gray-300 rounded-2xl p-8">
+            <h3 class="text-white text-xl font-bold mb-4">Resources</h3>
+            <div class="grid sm:grid-cols-3 gap-6">
+                <a href="https://tailwindcss.com/docs" target="_blank" class="hover:text-white transition">Tailwind CSS
+                    Docs →</a>
+                <a href="https://supabase.com/docs/reference/javascript/select" target="_blank"
+                    class="hover:text-white transition">Supabase Select →</a>
+                <a href="https://supabase.com/docs/reference/javascript/insert" target="_blank"
+                    class="hover:text-white transition">Supabase Insert →</a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="text-center text-gray-400 py-10">
+        <p>Built for the Cody Bootcamp © 2026</p>
+    </footer>
+
+</body>
+
+</html>
