@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Shoutout Wall (Starter)</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Supabase JS Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen font-sans">
+
+    <!-- Main Container -->
+    <div class="max-w-xl mx-auto py-10 px-4">
+
+        <!-- Heading -->
+        <h1 class="text-4xl font-bold text-center text-blue-600 mb-8">The Shoutout Wall</h1>
+
+        <!-- Input Form -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-xl font-semibold mb-4 text-gray-800">Leave a Shoutout!</h2>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                <input id="nameInput" type="text" placeholder="Your name"
+                    class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                <input id="messageInput" type="text" placeholder="Your message"
+                    class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <!-- TODO: Connect this button to the postMessage function -->
+            <button onclick="postMessage()"
+                class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-200">
+                Post Shoutout
+            </button>
+        </div>
+
+        <!-- Messages Section -->
+        <div>
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Latest Shoutouts</h2>
+
+            <p id="loadingText" class="text-center text-gray-500 hidden">Loading...</p>
+
+            <div id="messagesContainer" class="space-y-4">
+                <!-- Messages will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Your JavaScript Code -->
+    <script>
+        // --- 1. SETUP ---
+        // TODO: Get these from your Supabase Settings!
+        const SUPABASE_URL = '';
+        const SUPABASE_ANON_KEY = '';
+
+        // Initialize the Supabase client
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // --- 2. FUNCTIONS ---
+
+        // Challenge 1: Fetch messages from the database
+        async function fetchMessages() {
+            console.log("Fetching messages...");
+
+            // TODO: Select all columns ('*') from the 'messages' table
+            // const { data, error } = await supabase...
+
+
+            // TODO: If there are no errors, call displayMessages(data)
+        }
+
+        // Challenge 2: Send a new message
+        async function postMessage() {
+            // TODO: Get values from the input boxes
+            // const name = ...
+
+            // TODO: Insert a new row into 'messages' with { name: ..., message: ... }
+
+
+            // TODO: Refresh the messages to see your new post!
+        }
+
+        // Challenge 3 (Optional): Delete a message
+        async function deleteMessage(id) {
+            // TODO: Ask for confirmation
+
+            // TODO: Delete the row where 'id' equals the id passed in
+        }
+
+        // Challenge 4 (Optional): Like a message
+        async function likeMessage(id, currentLikes) {
+            // TODO: Update the 'likes' column
+        }
+
+        // Helper Function: displays the messages (Already done for you!)
+        function displayMessages(messages) {
+            const container = document.getElementById('messagesContainer');
+            container.innerHTML = '';
+
+            messages.forEach(msg => {
+                const card = document.createElement('div');
+                card.className = 'bg-white p-4 rounded-lg shadow border-l-4 border-blue-500 flex justify-between items-start';
+
+                // TODO: Fix the timestamp display if you want!
+                const date = msg.created_at;
+
+                card.innerHTML = `
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="font-bold text-gray-800">${msg.name}</h3>
+                            <span class="text-xs text-gray-400">${date}</span>
+                        </div>
+                        <p class="text-gray-600 mb-2">${msg.message}</p>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Start everything when the page loads
+        window.onload = fetchMessages;
+
+    </script>
+</body>
+
+</html>
